@@ -1,25 +1,13 @@
-package hw5;
+package hw6;
 
-import java.util.Arrays;
-
-import hw5.speccheck.Note;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Main {
-	public static void main(String[] args) {
-		int[] offSets = {2, 2, 1, 2, 2, 2, 1};
-		Note[] output = MusicUtilities.getScale(new Note("4C5"), offSets);
-		System.out.println(Arrays.toString(output));
+	public static void main(String[] args) throws FileNotFoundException {
+		boolean[][] bitmap = BitmapUtilities.create(5, 2);
+		File file = new File("/Users/emadreist/Desktop/bitmap");
+		BitmapUtilities.write(bitmap, file);
 		
-		Note[] majorScale = MusicUtilities.getMajorScale(new Note("4C5"));
-		System.out.println(Arrays.toString(majorScale));
-		
-		Note[] minorBluesScale = MusicUtilities.getMinorPentatonicBluesScale(new Note("4C5"));
-		System.out.println(Arrays.toString(minorBluesScale));
-		
-		Note[] bluesScale = MusicUtilities.getBluesScale(new Note("4C5")); 
-		System.out.println(Arrays.toString(bluesScale));
-		
-		Note[] naturalMinorScale = MusicUtilities.getMajorScale(new Note("4C5"));
-		System.out.println(Arrays.toString(naturalMinorScale));
 	}
 }
